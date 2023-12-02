@@ -61,12 +61,12 @@ if [ -z $LINK_ARTIFACT ] || [ $LINK_ARTIFACT = false ] ; then
       "fields": [
         {
           "name": "Commit",
-          "value": "'"$CI_COMMIT_SHORT_SHA"'",
+          "value": "'"\`$CI_COMMIT_SHORT_SHA\`"'",
           "inline": true
         },
         {
           "name": "Branch",
-          "value": "'"$CI_COMMIT_REF_NAME"'",
+          "value": "'"\`$CI_COMMIT_REF_NAME\`"'",
           "inline": true
         }
         ],
@@ -87,12 +87,12 @@ else
 			"fields": [
 			{
 				"name": "Commit",
-				"value": "'"$CI_COMMIT_SHORT_SHA"'",
+				"value": "'"\`$CI_COMMIT_SHORT_SHA\`"'",
 				"inline": true
 			},
 			{
 				"name": "Branch",
-				"value": "'"$CI_COMMIT_REF_NAME"'",
+				"value": "'"\`$CI_COMMIT_REF_NAME\`"'",
 				"inline": true
 			},
 			{
