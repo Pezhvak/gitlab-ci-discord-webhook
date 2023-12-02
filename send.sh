@@ -87,17 +87,17 @@ else
 			"fields": [
 			{
 				"name": "Commit",
-				"value": "'"[\`$CI_COMMIT_SHORT_SHA\`]($CI_PROJECT_URL/commit/$CI_COMMIT_SHA)"'",
+				"value": "'"$CI_COMMIT_SHORT_SHA"'",
 				"inline": true
 			},
 			{
 				"name": "Branch",
-				"value": "'"[\`$CI_COMMIT_REF_NAME\`]($CI_PROJECT_URL/tree/$CI_COMMIT_REF_NAME)"'",
+				"value": "'"$CI_COMMIT_REF_NAME"'",
 				"inline": true
 			},
 			{
 				"name": "Artifacts",
-				"value": "'"[\`$CI_JOB_ID\`]($ARTIFACT_URL)"'",
+				"value": "'"$CI_JOB_ID"'",
 				"inline": true
 			}
 			],
