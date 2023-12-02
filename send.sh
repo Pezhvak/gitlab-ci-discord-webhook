@@ -48,12 +48,11 @@ TIMESTAMP=$(date --utc +%FT%TZ)
 
 if [ -z $LINK_ARTIFACT ] || [ $LINK_ARTIFACT = false ] ; then
   WEBHOOK_DATA='{
-    "avatar_url": "https://gitlab.com/favicon.png",
+    "avatar_url": "https://raw.githubusercontent.com/Pezhvak/gitlab-ci-discord-webhook/master/avatar.png",
     "embeds": [ {
       "color": '$EMBED_COLOR',
       "author": {
-        "name": "Pipeline #'"$CI_PIPELINE_IID"' '"$STATUS_MESSAGE"' - '"$CI_PROJECT_PATH_SLUG"'",
-        "url": "'"$CI_PIPELINE_URL"'",
+        "name": "Pipeline '"$STATUS_MESSAGE"' - '"$CI_PROJECT_PATH_SLUG"'",
         "icon_url": "https://gitlab.com/favicon.png"
       },
       "title": "'"$COMMIT_SUBJECT"'",
@@ -81,11 +80,9 @@ else
 			"color": '$EMBED_COLOR',
 			"author": {
 			"name": "Pipeline #'"$CI_PIPELINE_IID"' '"$STATUS_MESSAGE"' - '"$CI_PROJECT_PATH_SLUG"'",
-			"url": "'"$CI_PIPELINE_URL"'",
 			"icon_url": "https://gitlab.com/favicon.png"
 			},
 			"title": "'"$COMMIT_SUBJECT"'",
-			"url": "'"$URL"'",
 			"description": "'"${COMMIT_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"'",
 			"fields": [
 			{
